@@ -1,0 +1,55 @@
+{
+    "name": "Iw/Api",
+    "type": "library",
+    "description": "API",
+    "keywords": [
+        "Iw",
+        "Api"
+    ],
+    "homepage": "https://github.com/Iw/Api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Iw",
+            "email": "emilio@ideaworks.la",
+            "homepage": "http://iw.com.sv",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "illuminate/support": "~5.1",
+        "php" : "~5.6|~7.0",
+        "spatie/laravel-fractal": "^4.0",
+        "firebase/php-jwt": "^4.0",
+        "ramsey/uuid": "^3.5",
+        "sinergi/token": "^0.1",
+        "spomky-labs/base64url": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "~4.0||~5.0",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Iw\\Api\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Iw\\Api\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "check-style": "phpcs -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests",
+        "fix-style": "phpcbf -p --standard=PSR2 --runtime-set ignore_errors_on_exit 1 --runtime-set ignore_warnings_on_exit 1 src tests"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "config": {
+        "sort-packages": true
+    }
+}
