@@ -9,5 +9,4 @@ return [
   'token' => env('IW_API_TOKEN', 'supersecret'),
   'url' => env('IW_API_URL', 'http://localhost:9000'),
   'asset_url' => env('IW_API_URL', 'http://localhost:9000'),
-  ]
 ];
