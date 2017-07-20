@@ -27,7 +27,7 @@ class RouteServiceProvider extends ServiceProvider
         parent::boot();
 
         foreach($this->middleware as $name => $class) {
-            $this->middleware($name, $class);
+            $this->app['router']->aliasMiddleware($name, $class);
         }
     }
 
