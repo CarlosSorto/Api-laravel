@@ -20,12 +20,11 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * Bootstrap any application services.
      *
-     * @param  \Illuminate\Routing\Router  $router
      * @return void
      */
-    public function boot(Router $router)
+    public function boot()
     {
-        parent::boot($router);
+        parent::boot();
 
         foreach($this->middleware as $name => $class) {
             $this->middleware($name, $class);
