@@ -18,8 +18,16 @@ class BaseForm
 
         $class = get_class($this->model);
         $this->class = $class;
-        $this->data = $class::parseData($this->params);
+        $this->data = $this->parseData($this->params);
     }
+    
+    public function parseData($request)
+    {
+      $data = isset($request["data"]) ? $request["data"] : [];
+      return $data;
+    }
+
+
 
     public function sync()
     {
