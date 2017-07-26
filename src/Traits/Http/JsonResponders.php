@@ -32,7 +32,7 @@ trait JsonResponders
     protected function jsonError($status, $errors = null, $meta = [])
     {
         $fractal = fractal();
-        // $fractal->setDefaultSerializer(new ArraySerializer());
+        $fractal->serializeWith(new ArraySerializer());
         $transformed = $fractal->item($status, new ErrorTransformer)->toArray();
         if ($errors) {
             $transformed["errors"] = $errors;
