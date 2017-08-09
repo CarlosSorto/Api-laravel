@@ -16,6 +16,7 @@ trait JsonResponders
             $transformed["meta"]["current_page"] = $paginator->currentPage();
             $transformed["meta"]["per_page"] = $paginator->perPage();
             $transformed["meta"]["total"] = $paginator->total();
+            $transformed["meta"]["last_page"] = $paginator->lastPage();
         }
 
         return $transformed;
