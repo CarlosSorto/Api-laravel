@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Iw\ApiAuth\Contracts\Repositories\UserRepository;
 use \Illuminate\Pagination\Paginator;
 
-trait Searcheable
+trait Searchable
 {
     public static function identifierAttribute()
     {
@@ -38,16 +38,16 @@ trait Searcheable
             $predicate = last(explode("|", $key));
             $name = explode("|", $key)[0];
             if (
-                (is_array(static::$searcheable_fields)  &&
-                isset(static::$searcheable_fields[$name]) &&
-                is_array(static::$searcheable_fields[$name]) &&
+                (is_array(static::$searchable_fields)  &&
+                isset(static::$searchable_fields[$name]) &&
+                is_array(static::$searchable_fields[$name]) &&
                 $value !="" &&
                 $value != null) || $predicate == "scp"
             ) {
                 if ($predicate == "scp") {
                     $type = null;
                 } else {
-                    $type = static::$searcheable_fields[$name]["type"];
+                    $type = static::$searchable_fields[$name]["type"];
                 }
 
                 $all_types = [
