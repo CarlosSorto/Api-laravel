@@ -9,6 +9,10 @@ use Ramsey\Uuid\Uuid;
 
 class BaseForm
 {
+    
+    protected $fields = [];
+
+    
     public function __construct($model, $transformer, $params)
     {
         $this->transformer = $transformer;
@@ -56,5 +60,14 @@ class BaseForm
     {
         $options = [];
         return $validator = Validator::make($data, $options);
+    }
+    
+    protected function assignAttributes()
+    {
+      foreach ($this->fields as $key => $value) {
+        if (isset($this->data[$value])) {
+          $this->model->$value = $this->data[$value];
+        }
+      }
     }
 }
