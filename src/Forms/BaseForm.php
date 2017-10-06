@@ -65,7 +65,7 @@ class BaseForm
     protected function assignAttributes()
     {
       foreach ($this->fields as $key => $value) {
-        if (isset($this->data[$value])) {
+        if (array_key_exists($value,$this->data)) {
           $this->model->$value = $this->data[$value];
         }
       }
